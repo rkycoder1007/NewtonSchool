@@ -1,0 +1,15 @@
+static class Student {
+	// your class code goes here
+	 String name;
+	 int rollNumber;
+	Student(String name,int roll_no){
+		this.name=name;
+		this.rollNumber=roll_no;
+	}
+}
+
+public static Student myFunction (String name, int rollNumber){
+	// your function code goes here
+	Student s=new Student(name,rollNumber);
+	return s;
+}

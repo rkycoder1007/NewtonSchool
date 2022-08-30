@@ -1,0 +1,29 @@
+import java.io.*; // for handling input/output
+import java.util.*; // contains Collections framework
+
+// don't change the name of this class
+// you can add inner classes if needed
+class Main {
+    public static void main (String[] args) {
+                      // Your code here
+    Scanner sc=new Scanner(System.in);
+    int n=sc.nextInt();
+    sc.nextLine();
+    String s1=sc.nextLine();
+    String s2=sc.nextLine();
+    //n=s1.length();
+    StringBuilder s3=new StringBuilder("");
+    for(int i=0;i<n;i++){
+        char c1=s1.charAt(i);
+        char c2=s2.charAt(i);
+        if(c1=='1' && c2=='0'){
+            s3=s3.append("1");
+        }else if(c2=='1' && c1=='0'){
+            s3=s3.append("1");
+        }else{
+           s3=s3.append("0"); 
+        }
+    }
+    System.out.println(s3);
+    }
+}

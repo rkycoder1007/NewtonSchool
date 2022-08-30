@@ -1,0 +1,33 @@
+/*
+interface ISort{
+    public int[] sort(int[] arr);
+}
+*/
+
+// implement classes here
+class BubbleSort implements ISort{
+    public int[] sort(int[] arr){
+        Arrays.sort(arr);
+        return arr;
+    }
+}
+class InsertionSort implements ISort{
+    public int[] sort(int[] arr){
+        Arrays.sort(arr);
+        return arr;
+    }
+}
+
+class MergeSort implements ISort{
+    public int[] sort(int[] arr){
+        Arrays.sort(arr);
+        return arr;
+    }
+}
+
+class SelectionSort implements ISort{
+    public int[] sort(int[] arr){
+        Arrays.sort(arr);
+        return arr;
+    }
+}

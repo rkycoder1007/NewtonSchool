@@ -1,0 +1,175 @@
+import java.util.*;
+
+// Do not edit the Quadrilateral class
+abstract class Quadrilateral {
+   double side1;
+   double side2;
+   double side3;
+   double side4;
+
+   public Quadrilateral(double side1, double side2, double side3, double side4) {
+       this.side1 = side1;
+       this.side2 = side2;
+       this.side3 = side3;
+       this.side4 = side4;
+   }
+
+   protected abstract double getArea();
+
+   protected double getPerimeter() {
+       return (side1+side2+side3+side4);
+   }
+}
+
+// Implement class Parallelogram and methods getArea() and getPerimeter()
+class Parallelogram extends Quadrilateral {
+    //Write your code here
+    double base;
+    double side;
+    double height;
+
+    Parallelogram(double base,double side,double height){
+        super(base,side,base,side);
+        if(base<0){
+            this.base=0;
+        }else{
+            this.base=base;
+        }
+        if(side<0){
+            this.side=0;
+        }else{
+            this.side=side;
+        }
+        if(height<0){
+            this.height=0;
+        }else{
+            this.height=height;
+        }
+    }
+   public double getArea(){
+       return base*height;
+   }
+   public double getPerimeter(){
+       return base*2.0+side*2.0;
+   }
+}
+
+//mplement class Rhombus and methods getArea() and getPerimeter()
+class Rhombus extends Parallelogram {
+    //Write your code here
+    double side;
+    double height;
+    Rhombus(double side,double height){
+        super(side,side,height);
+        if(side<0)
+        this.side=side;
+        else
+        this.side=side;
+        if(height<0)
+        this.height=height;
+        else
+        this.height=height;
+    }
+        public double getArea(){
+             return side*height;
+        }
+        public double getPerimeter(){
+             return base*4;
+         }
+    }
+
+     //Implement class Rectangle and methods getArea() and getPerimeter()
+class Rectangle extends Parallelogram {
+    //Write your code here
+    double side;
+    double height;
+    Rectangle(double side,double height){
+        super(side,height,height);
+        if(side<0)
+        this.side=side;
+        else
+        this.side=side;
+        if(height<0)
+        this.height=height;
+        else
+        this.height=height;
+    }
+    
+        public double getArea(){
+             return side*height;
+        }
+        public double getPerimeter(){
+             return 2*(side+height);
+         }
+
+}
+
+//Implement class Square and methods getArea() and getPerimeter()
+class Square extends Rhombus {
+    //Write your code here
+    double side;
+    Square(double side){
+        super(side,side);
+        if(side<0)
+        this.side=0;
+        else
+        this.side=side;
+    }
+        public double getArea(){
+             return side*side;
+        }
+        public double getPerimeter(){
+             return 4*side;
+         }
+   
+}
+
+// Do not edit the Main class
+class Main {
+   public static void main(String[] args) {
+       //Write your code here
+    Scanner sc=new Scanner(System.in);
+
+    //Input of Parallelogram
+    double side1=sc.nextDouble();
+    double side2=sc.nextDouble();
+    double height=sc.nextDouble();
+
+    //input of Rhombus
+    double side3=sc.nextDouble();
+    double height2=sc.nextDouble();
+
+    //input of Rectangle
+    double l=sc.nextDouble();
+    double b=sc.nextDouble();
+
+    //input of Square
+    double side4=sc.nextDouble();
+    
+    //check conditon for negative side
+    if(side1<0 || side2<0 || height<0 || side3<0 || height2<0 || l<0 || b<0 || side4<0){
+        System.out.println("Length of a side cannot be negative. Please Enter a positive integer");
+    }else{
+
+        //Parallelogram
+        Parallelogram p=new Parallelogram(side1,side2,height);
+        System.out.println("Perimeter of Parallelogram is "+p.getPerimeter()+" and Area of Parallelogram is "+p.getArea());
+
+        //Rhombus
+        Rhombus r=new Rhombus(side3,height2);
+        System.out.println("Perimeter of Rhombus is "+r.getPerimeter()+" and Area of Rhombus is "+r.getArea());
+
+        //Rectangle
+        Rectangle rc=new Rectangle(l,b);
+        System.out.println("Perimeter of Rectangle is "+rc.getPerimeter()+" and Area of Rectangle is "+rc.getArea());
+
+        //Square
+         Square s=new Square(side4);
+         System.out.println("Perimeter of Square is "+s.getPerimeter()+" and Area of Square is "+s.getArea());
+    }
+   }
+
+}
+  
+
+ 

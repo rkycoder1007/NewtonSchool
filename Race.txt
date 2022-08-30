@@ -1,0 +1,12 @@
+static char Race(int A,int B,int C){
+//Enter your code here
+int d1=Math.abs(C-A);
+int d2=Math.abs(C-B);
+if(d1==d2)
+return 'D';
+if(d1<d2)
+return 'N';
+else
+return 'S';
+
+}

@@ -1,0 +1,35 @@
+/*
+// information about the class Node
+class Node
+{
+    int data;
+    Node next;
+    Node(int d) 
+    {
+        data = d; 
+        next = null;
+    }
+}
+*/
+static int getNthFromLast(Node head, int n)
+{
+
+       // Your code here
+       int length=0;
+       Node temp=head;
+       while(temp!=null){
+           length++;
+           temp=temp.next;
+       }
+       int nthfromstart=length-n+1;
+       int k=nthfromstart;
+       temp=head;
+       int count=1;
+       if(k<=0)
+       return -1;
+       while(temp!=null && count<k){
+           temp=temp.next;
+           count++;
+       }
+       return temp.data;
+}

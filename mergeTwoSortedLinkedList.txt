@@ -1,0 +1,59 @@
+/*
+class Node {
+    Node next;
+    int val;
+
+    Node(int val) {
+        this.val = val;
+        next = null;
+    }
+}
+*/
+/*
+below function is used to insert nodes in the linked list
+public static Node insert111(Node head, int val) {
+        if(head == null) {
+            return new Node(val);
+        } else {
+            Node cur;
+            cur = insert111(head.next, val);
+            head.next = cur;
+            return head;
+        }
+    }
+
+*/
+public static Node Merge (Node head1, Node head2){
+//Enter your code here
+    if(head1==null)
+    return head2;
+    if(head2==null)
+    return head1;
+    Node newHead=null;
+    Node tail=null;
+    if(head1.val<=head2.val){
+        newHead=head1;
+        tail=head1;
+        head1=head1.next;
+    }else{
+         newHead=head2;
+        tail=head2;
+        head2=head2.next;
+    }
+    while(head1!=null && head2!=null){
+        if(head1.val<=head2.val){
+            tail.next=head1;
+            tail=head1;
+            head1=head1.next;
+        }else{
+            tail.next=head2;
+            tail=head2;
+            head2=head2.next;
+        }
+    }
+    if(head1!=null)
+    tail.next=head1;
+    if(head2!=null)
+    tail.next=head2;
+    return newHead;
+}

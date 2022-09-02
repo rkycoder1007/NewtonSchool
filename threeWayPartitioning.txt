@@ -1,0 +1,22 @@
+public static ArrayList<Integer> threeWayPartition(ArrayList<Integer> A, int lowVal, int highVal)
+{
+	// Your code here
+	int smaller=0;
+	int range=0;
+	int greater=0;
+	int n=A.size();
+	ArrayList<Integer> ans=new ArrayList<>();
+	for(int i=0;i<n;i++){
+		if(A.get(i)<lowVal)
+		ans.add(A.get(i));
+	}
+	for(int i=0;i<n;i++){
+		if(A.get(i)>=lowVal && A.get(i)<=highVal)
+		ans.add(A.get(i));
+	}
+	for(int i=0;i<n;i++){
+		if(A.get(i)>highVal)
+		ans.add(A.get(i));
+	}
+	return ans;
+}

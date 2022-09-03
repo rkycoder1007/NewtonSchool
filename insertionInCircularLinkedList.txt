@@ -1,0 +1,24 @@
+/*
+class Node {
+    Node next;
+    int val;
+
+    Node(int val) {
+        this.val = val;
+        next = null;
+    }
+}
+*/
+
+public static Node Insertion(Node head, int K){
+//Enter your code here
+Node prev=null;
+Node currentHead=head;
+while(head.next!=currentHead){
+    head=head.next;
+}   
+Node newNode=new Node(K);
+head.next=newNode;
+newNode.next=currentHead;
+return currentHead;
+}

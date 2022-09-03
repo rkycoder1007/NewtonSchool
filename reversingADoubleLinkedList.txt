@@ -1,0 +1,29 @@
+/*
+class Node {
+    Node next;
+    Node prev;
+    int val;
+
+    Node(int val) {
+        this.val = val;
+        next = null;
+        prev = null;
+    }
+}
+*/
+  public static Node Reverse(Node head) {
+//complete this function
+if(head.next==null)
+return head;
+Node temp=new Node(0);
+Node newHead=new Node(0);
+while(head!=null){
+  if(head.next==null)
+  newHead=head;
+  temp.next=head.next;
+  head.next=head.prev;
+  head.prev=temp.next;
+  head=head.prev;
+}
+return newHead;
+}

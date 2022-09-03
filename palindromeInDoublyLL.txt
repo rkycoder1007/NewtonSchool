@@ -1,0 +1,26 @@
+/*
+class Node
+{
+   char data;
+   Node next, prev;
+};
+*/
+ static boolean isPalin( Node left)
+    {
+        // Write your code here
+        Node temp=left;
+        Node head=left;
+        while(temp.next!=null){
+           temp=temp.next;
+        }
+        HashMap<Node,Boolean> mp=new HashMap<>();
+        while(temp!=head && mp.get(temp)==null && mp.get(head)==null){
+           if(temp.data==head.data){
+              head=head.next;
+              temp=temp.prev;
+           }else{
+              return false;
+           }
+        }
+        return true;
+    }

@@ -1,0 +1,51 @@
+/* class pair
+{
+    
+    int first;
+    int second;
+    pair(int f, int s)
+    {
+        this.first = f;
+        this.second = s;
+    }
+}
+*/
+public static ArrayList<pair> kNeighbourPoints(ArrayList<pair> points, pair P, int K)
+{
+        // Your code here
+        PriorityQueue<pair1> pq=new PriorityQueue<>(new sortByDistance());
+        for(pair p:points){
+            long x1=p.first;
+            long y1=p.second;
+            long x2=P.first;
+            long y2=P.second;
+            long dist=(x1-x2)*(x1-x2)+(y1-y2)*(y1-y2);
+            pair1 p2=new pair1(dist,p);
+            pq.add(p2);
+        }
+        ArrayList<pair> ans=new ArrayList<>();
+        long k=0;
+        while(pq.size()!=0){
+            k++;
+            pair1 p1=pq.poll();
+          ans.add(p1.p);
+            if(k==K)
+            break;
+        }
+        return ans;
+ }
+
+ static class pair1{
+     long dist;
+     pair p;
+     pair1(long dist,pair p){
+         this.dist=dist;
+         this.p=p;
+     }
+ }
+
+ static class sortByDistance implements Comparator<pair1>{
+     public int compare(pair1 p1,pair1 p2){
+         return p1.dist>p2.dist?1:-1;
+     }
+ }
